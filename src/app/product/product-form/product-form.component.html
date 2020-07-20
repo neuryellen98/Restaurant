@@ -1,4 +1,49 @@
-<p-panel header="Product registration" [style]="{'margin-bottom':'20px'}">
-    <label >Product name: </label>
-    <input type="text" pInputText />
+<p-toast position="top-left"></p-toast>
+
+<p-panel header="New product" [style]="{'margin-bottom':'20px'}">
+    <div class="ui-fluid p-formgrid p-grid">
+        <div class="p-field p-col">
+            <label for="productName">Product name</label>
+            <input id="productName" type="text" pInputText [(ngModel)]="productNameField"> 
+        </div>
+        <div class="p-field p-col">
+            <label for="description">Description</label>
+            <input id="description" type="text" pInputText [(ngModel)]="descriptionField"> 
+        </div>
+    </div>
+
+    <div class="ui-fluid p-formgrid p-grid">
+        <div class="p-field p-col">
+            <label for="ingredients">Ingredients</label>
+            <input id="ingredients" type="text" pInputText [(ngModel)]="ingredientsField"> 
+        </div>
+        <div class="p-field p-col">
+            <label for="nutritionalValue">Nutritional value</label>
+            <input id="nutritionalValue" type="text" pInputText [(ngModel)]="nutritionalValueField"> 
+        </div>
+    </div>
+
+    <div class="ui-fluid p-formgrid p-grid">
+        <div class="p-col-12 p-md-3">
+            <label>Price</label>
+            <p-inputNumber [(ngModel)]="priceField" [showButtons]="true" mode="currency" currency="USD"></p-inputNumber>
+        </div>
+        <div class="p-col-12 p-md-3" style="margin-top:25px">
+            <p-checkbox label="Available" [(ngModel)]="availableField" binary="true"></p-checkbox>
+        </div>
+
+        <div class="p-col-12 p-md-1">
+            <label>Photo</label>
+            <p-fileUpload mode="basic" name="demo[]" url="./upload.php" accept="image/*" maxFileSize="1000000" (onUpload)="onUpload($event)"></p-fileUpload>
+        </div>
+    </div>
+
+    <div class="ui-fluid p-formgrid p-grid" style="margin-top:25px">
+        <div class="p-col-12 p-md-1">
+            <button pButton type="button" label="Save" class="ui-button-success" icon="pi pi-check" (onClick)="save($event)"></button>
+        </div>
+        <div class="p-col-12 p-md-1">
+            <button pButton type="button" label="Cancel" icon="pi pi-times" (onClick)="cancel($event)"></button>
+        </div>
+    </div>
 </p-panel>
