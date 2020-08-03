@@ -1,25 +1,25 @@
-<p-toast position="top-left"></p-toast>
+<p-toast></p-toast>
 
 <p-panel header="New product" [style]="{'margin-bottom':'20px'}">
     <div class="ui-fluid p-formgrid p-grid">
         <div class="p-field p-col">
             <label for="productName">Product name</label>
-            <input id="productName" type="text" pInputText [(ngModel)]="productNameField"> 
+            <input id="productName" type="text" pInputText [(ngModel)]="productNameField">
         </div>
         <div class="p-field p-col">
             <label for="description">Description</label>
-            <input id="description" type="text" pInputText [(ngModel)]="descriptionField"> 
+            <input id="description" type="text" pInputText [(ngModel)]="descriptionField">
         </div>
     </div>
 
     <div class="ui-fluid p-formgrid p-grid">
         <div class="p-field p-col">
             <label for="ingredients">Ingredients</label>
-            <input id="ingredients" type="text" pInputText [(ngModel)]="ingredientsField"> 
+            <input id="ingredients" type="text" pInputText [(ngModel)]="ingredientsField">
         </div>
         <div class="p-field p-col">
             <label for="nutritionalValue">Nutritional value</label>
-            <input id="nutritionalValue" type="text" pInputText [(ngModel)]="nutritionalValueField"> 
+            <input id="nutritionalValue" type="text" pInputText [(ngModel)]="nutritionalValueField">
         </div>
     </div>
 
@@ -34,16 +34,18 @@
 
         <div class="p-col-12 p-md-1">
             <label>Photo</label>
-            <p-fileUpload mode="basic" name="demo[]" url="./upload.php" accept="image/*" maxFileSize="1000000" (onUpload)="onUpload($event)"></p-fileUpload>
+            <p-fileUpload mode="basic" name="demo[]" url="./upload.php" accept="image/*" maxFileSize="1000000">
+            </p-fileUpload>
         </div>
     </div>
 
     <div class="ui-fluid p-formgrid p-grid" style="margin-top:25px">
         <div class="p-col-12 p-md-1">
-            <button pButton type="button" label="Save" class="ui-button-success" icon="pi pi-check" (onClick)="save($event)"></button>
+            <button pButton type="button" label="Save" class="ui-button-success" icon="pi pi-check"
+                (click)="save($event)"></button>
         </div>
         <div class="p-col-12 p-md-1">
-            <button pButton type="button" label="Cancel" icon="pi pi-times" (onClick)="cancel($event)"></button>
+            <button pButton type="button" label="Cancel" icon="pi pi-times" (click)="cancel($event)"></button>
         </div>
     </div>
 </p-panel>

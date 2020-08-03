@@ -14,6 +14,8 @@ import { MessagesModule } from 'primeng/messages';
 import { MessageModule } from 'primeng/message';
 import { MessageService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
+import { ProductRoutingModule } from './product-routing.module';
+import { Router } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -32,10 +34,12 @@ import { ToastModule } from 'primeng/toast';
     MessageModule,
     MessagesModule,
     PanelModule,
+    ProductRoutingModule,
     ToastModule
   ],
   providers: [
-    MessageService
+    MessageService,
+    Router
   ],
 })
 export class ProductModule { }
