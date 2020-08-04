@@ -15,20 +15,27 @@ import { MessageModule } from 'primeng/message';
 import { MessageService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
 import { ProductRoutingModule } from './product-routing.module';
-import { Router } from '@angular/router';
+import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     ProductListComponent,
     ProductFormComponent
   ],
+  exports: [
+    ProductListComponent,
+    ProductFormComponent
+  ],
   imports: [
+    BrowserModule,
     BrowserAnimationsModule,
     ButtonModule,
     CheckboxModule,
     CommonModule,
     FileUploadModule,
     FormsModule,
+    HttpClientModule,
     InputNumberModule,
     InputTextModule,
     MessageModule,
@@ -38,8 +45,7 @@ import { Router } from '@angular/router';
     ToastModule
   ],
   providers: [
-    MessageService,
-    Router
+    MessageService
   ],
 })
 export class ProductModule { }

@@ -1,15 +1,16 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { ProductFormComponent } from './product/product-form/product-form.component';
-import { ProductListComponent } from './product/product-list/product-list.component';
+import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
-  { path: 'product-form', component: ProductFormComponent },
-  { path: 'product-list', component: ProductListComponent }
+  {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'product-form',
+  }
 ];
 
 @NgModule({
   exports: [RouterModule],
-  imports: [RouterModule.forChild(routes)]
+  imports: [RouterModule.forRoot(routes)],
 })
 export class AppRoutingModule { }
